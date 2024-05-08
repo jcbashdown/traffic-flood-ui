@@ -19,7 +19,7 @@ const Map = () => {
         center={[5000, 5000]}
         minZoom={-2}
         maxZoom={2}
-        zoom={0}
+        zoom={-2}
         crs={CRS.Simple}
         style={{ width: '100%', height: '100%' }}
       >
@@ -36,9 +36,11 @@ const Map = () => {
             [10000, 10000],
           ]}
         >
-          <svg>
+          <svg viewBox="0 0 10000 10000">
             <image
               href="/traffic_svgs/2024-05-08T08-52-21.527Z.svg"
+              width="10000"
+              height="10000"
             />
           </svg>
         </SVGOverlay>
