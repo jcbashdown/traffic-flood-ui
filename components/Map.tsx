@@ -22,6 +22,11 @@ const Map = () => {
         zoom={-2}
         crs={CRS.Simple}
         style={{ width: '100%', height: '100%' }}
+        maxBounds={[
+          [0, 0],
+          [10000, 10000],
+        ]}
+    maxBoundsViscosity={1}
       >
         <ImageOverlay
           url="/background-map.png"
