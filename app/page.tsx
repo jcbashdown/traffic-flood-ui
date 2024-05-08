@@ -13,6 +13,11 @@ const TrafficTimeseries = dynamic(() => import('@/components/TrafficTimeseries')
   ssr: false,
 });
 
+const RainfallChart = dynamic(() => import('@/components/RainfallChart'), {
+  loading: () => <p>loading...</p>,
+  ssr: false,
+});
+
 import rainfallData from '@/fixtures/hourly_precip_mm.json'
 import trafficData from '@/fixtures/traffic_history.json'
 
@@ -23,10 +28,9 @@ const Home = () => {
         <TrafficTimeseries data={trafficData} />
       </div>
       <div className="w-4/5 h-1/4">
-        <RainTimeseries data={rainfallData} />
+        <RainfallChart data={rainfallData} />
       </div>
       <div className="w-4/5 h-2/4">
-        <Map />
       </div>
     </div>
   );
