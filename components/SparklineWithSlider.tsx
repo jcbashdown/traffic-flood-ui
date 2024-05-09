@@ -66,7 +66,7 @@ const SparklineWithSlider: React.FC = () => {
     }
 
     function getHumanReadableLocalTime(selectedTimestamp: string): string {
-        return moment(selectedTimestamp).format('dddd - Do MMMM YYYY - h A')
+        return moment(selectedTimestamp).format('dddd - Do MMMM YYYY - h:mm A')
     }
     return (
         <>
