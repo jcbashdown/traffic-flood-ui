@@ -1,9 +1,13 @@
 'use client'
-import React, { useState } from 'react'
 import { AreaChart, Area, XAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
 import Slider, { SliderProps } from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import moment from 'moment'
+
+import { useAppSelector, useAppDispatch } from '@/lib/redux/hooks'
+
+import { setSelectedTimestamp } from '@/lib/redux/store'
+import { selectData, selectSelectedTimestamp } from '@/lib/redux/store'
 
 interface DataPoint {
     timestamp: string
@@ -51,19 +55,18 @@ const TimeseriesSlider: React.FC<TimeseriesSliderProps> = ({ data, onTimestampCh
     return <Slider min={0} max={data.length - 1} step={1} onChange={handleSliderChange} />
 }
 
-interface SparklineWithSliderProps {
-    data: DataPoint[]
-}
+const SparklineWithSlider: React.FC = () => {
+    const selectedTimestamp = useAppSelector(selectSelectedTimestamp)
+    const data = useAppSelector(selectData)
 
-const SparklineWithSlider: React.FC<SparklineWithSliderProps> = ({ data }) => {
-    const [selectedTimestamp, setSelectedTimestamp] = useState<string>(data[0].timestamp)
+    const dispatch = useAppDispatch()
 
     const handleTimestampChange = (timestamp: string) => {
-        setSelectedTimestamp(timestamp)
+        dispatch(setSelectedTimestamp(timestamp))
     }
 
     function getHumanReadableLocalTime(selectedTimestamp: string): string {
-        return moment(selectedTimestamp).format('dddd - Do MMMM YYYY - HH:mm')
+        return moment(selectedTimestamp).format('dddd - Do MMMM YYYY - h A')
     }
     return (
         <>

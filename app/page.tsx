@@ -23,19 +23,22 @@ const SparklineWithSlider = dynamic(() => import('@/components/SparklineWithSlid
     ssr: false,
 })
 
-import rainfallData from '@/fixtures/combined_data.json'
-import trafficData from '@/fixtures/traffic_history.json'
+import StoreProvider from '@/app/StoreProvider'
+
+import combinedData from '@/fixtures/combined_data.json'
 
 const Home = () => {
     return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4">
-            <div className="w-4/5 h-2/4">
-                <SparklineWithSlider data={rainfallData} />
+        <StoreProvider weather_and_traffic_data={combinedData}>
+            <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4">
+                <div className="w-4/5 h-2/4">
+                    <SparklineWithSlider />
+                </div>
+                <div className="w-4/5 h-2/4">
+                    <Map />
+                </div>
             </div>
-            <div className="w-4/5 h-2/4">
-                <Map />
-            </div>
-        </div>
+        </StoreProvider>
     )
 }
 
