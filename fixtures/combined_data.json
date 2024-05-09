@@ -654,12 +654,6 @@
         "precipMM": 0.0
     },
     {
-        "timestamp": "2024-05-08T08:51:34Z",
-        "filename": "2024-05-08T08-51-34.197Z.svg",
-        "percentage": 0.0566,
-        "precipMM": 0.0
-    },
-    {
         "timestamp": "2024-05-08T08:52:21Z",
         "filename": "2024-05-08T08-52-21.527Z.svg",
         "percentage": 0.0817,
@@ -681,12 +675,6 @@
         "timestamp": "2024-05-08T09:30:02Z",
         "filename": "2024-05-08T09-30-02.002Z.svg",
         "percentage": 0.0953,
-        "precipMM": 0.1
-    },
-    {
-        "timestamp": "2024-05-08T09:33:41Z",
-        "filename": "2024-05-08T09-33-41.989Z.svg",
-        "percentage": 0.0,
         "precipMM": 0.1
     },
     {
