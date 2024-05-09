@@ -23,7 +23,7 @@ const SparklineWithSlider = dynamic(() => import('@/components/SparklineWithSlid
     ssr: false,
 })
 
-import rainfallData from '@/fixtures/hourly_precip_mm.json'
+import rainfallData from '@/fixtures/combined_data.json'
 import trafficData from '@/fixtures/traffic_history.json'
 
 const Home = () => {

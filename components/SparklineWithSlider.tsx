@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { AreaChart, Area, XAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
 import Slider, { SliderProps } from 'rc-slider'
 import 'rc-slider/assets/index.css'
+import moment from 'moment'
 
 interface DataPoint {
     timestamp: string
@@ -61,11 +62,9 @@ const SparklineWithSlider: React.FC<SparklineWithSliderProps> = ({ data }) => {
         setSelectedTimestamp(timestamp)
     }
 
-    const getHumanReadableLocalTime = (selectedTimestamp: string) => {
-        const localTime = new Date(selectedTimestamp).toLocaleString()
-        return localTime
+    function getHumanReadableLocalTime(selectedTimestamp: string): string {
+        return moment(selectedTimestamp).format('dddd - Do MMMM YYYY - HH:mm')
     }
-    const localTime = new Date(selectedTimestamp).toLocaleString()
     return (
         <>
             <Sparkline data={data} selectedTimestamp={selectedTimestamp} />
