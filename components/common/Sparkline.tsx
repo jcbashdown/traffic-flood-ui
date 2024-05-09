@@ -11,7 +11,7 @@ interface DataPoint {
 interface SparklineProps {
     data: DataPoint[]
     selectedTimestamp: string
-    key: string
+    keyName: string
 }
 
 const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName }) => {
