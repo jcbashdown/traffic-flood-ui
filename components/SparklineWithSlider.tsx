@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { LineChart, Line, XAxis, YAxis, ReferenceLine, TooltipProps } from 'recharts'
+import { AreaChart, Area, XAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
 import Slider, { SliderProps } from 'rc-slider'
 import 'rc-slider/assets/index.css'
 
@@ -17,17 +17,22 @@ interface SparklineProps {
 const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp }) => {
     const selectedData = data.find((data: DataPoint) => data.timestamp === selectedTimestamp)
     return (
-        <LineChart width={500} height={200} data={data}>
-            <XAxis dataKey="timestamp" />
-            <YAxis />
-            if(selectedData) {<ReferenceLine x={selectedData?.timestamp} stroke="green" label="Min PAGE" />}
-            <Line type="monotone" dataKey="precipMM" stroke="#8884d8" />
-        </LineChart>
+        <ResponsiveContainer width="100%" height={300} minHeight={200}>
+            <AreaChart
+                data={data}
+                margin={{
+                    top: 10,
+                    right: 0,
+                    left: 0,
+                    bottom: 10,
+                }}
+            >
+                <XAxis dataKey="timestamp" className="hidden" />
+                if(selectedData) {<ReferenceLine x={selectedData?.timestamp} stroke="blue" />}
+                <Area type="monotone" dataKey="precipMM" stroke="#8884d8" fill="#8884d8" />
+            </AreaChart>
+        </ResponsiveContainer>
     )
-}
-
-interface CustomTooltipProps extends TooltipProps<number, string> {
-    selectedTimestamp: string
 }
 
 interface TimeseriesSliderProps {
@@ -56,11 +61,17 @@ const SparklineWithSlider: React.FC<SparklineWithSliderProps> = ({ data }) => {
         setSelectedTimestamp(timestamp)
     }
 
+    const getHumanReadableLocalTime = (selectedTimestamp: string) => {
+        const localTime = new Date(selectedTimestamp).toLocaleString()
+        return localTime
+    }
+    const localTime = new Date(selectedTimestamp).toLocaleString()
     return (
-        <div>
+        <>
             <Sparkline data={data} selectedTimestamp={selectedTimestamp} />
             <TimeseriesSlider data={data} onTimestampChange={handleTimestampChange} />
-        </div>
+            <h2 className="text-center mb-4">{getHumanReadableLocalTime(selectedTimestamp)}</h2>
+        </>
     )
 }
 

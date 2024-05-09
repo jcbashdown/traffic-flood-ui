@@ -29,10 +29,7 @@ import trafficData from '@/fixtures/traffic_history.json'
 const Home = () => {
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4">
-            <div className="w-4/5 h-1/4">
-                <TrafficTimeseries data={trafficData} />
-            </div>
-            <div className="w-4/5 h-1/4">
+            <div className="w-4/5 h-2/4">
                 <SparklineWithSlider data={rainfallData} />
             </div>
             <div className="w-4/5 h-2/4">
