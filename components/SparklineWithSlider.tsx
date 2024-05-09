@@ -22,7 +22,7 @@ interface SparklineProps {
 const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp }) => {
     const selectedData = data.find((data: DataPoint) => data.timestamp === selectedTimestamp)
     return (
-        <ResponsiveContainer width="100%" height={300} minHeight={200}>
+        <ResponsiveContainer width="100%" height={100} minHeight={50}>
             <AreaChart
                 data={data}
                 margin={{

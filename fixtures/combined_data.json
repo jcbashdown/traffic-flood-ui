@@ -514,23 +514,5 @@
         "filename": "2024-05-08T03-00-01.533Z.svg",
         "percentage": 0.0081,
         "precipMM": 0.0
-    },
-    {
-        "timestamp": "2024-05-08T08:51:34Z",
-        "filename": "2024-05-08T08-51-34.197Z.svg",
-        "percentage": 0.0566,
-        "precipMM": 0.0
-    },
-    {
-        "timestamp": "2024-05-08T08:52:21Z",
-        "filename": "2024-05-08T08-52-21.527Z.svg",
-        "percentage": 0.0817,
-        "precipMM": 0.0
-    },
-    {
-        "timestamp": "2024-05-08T09:33:41Z",
-        "filename": "2024-05-08T09-33-41.989Z.svg",
-        "percentage": 0.0,
-        "precipMM": 0.1
     }
 ]

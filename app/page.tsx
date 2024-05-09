@@ -13,11 +13,6 @@ const TrafficTimeseries = dynamic(() => import('@/components/TrafficTimeseries')
     ssr: false,
 })
 
-const RainfallChart = dynamic(() => import('@/components/RainfallChart'), {
-    loading: () => <p>loading...</p>,
-    ssr: false,
-})
-
 const SparklineWithSlider = dynamic(() => import('@/components/SparklineWithSlider'), {
     loading: () => <p>loading...</p>,
     ssr: false,
@@ -31,10 +26,11 @@ const Home = () => {
     return (
         <StoreProvider weather_and_traffic_data={combinedData}>
             <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4">
-                <div className="w-4/5 h-2/4">
+                <div className="w-4/5 h-1/4 pt-2">
+                    <TrafficTimeseries />
                     <SparklineWithSlider />
                 </div>
-                <div className="w-4/5 h-2/4">
+                <div className="w-4/5 h-3/4 pb-4">
                     <Map />
                 </div>
             </div>
