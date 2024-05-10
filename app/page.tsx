@@ -13,7 +13,7 @@ const TrafficTimeseries = dynamic(() => import('@/components/TrafficTimeseries')
     ssr: false,
 })
 
-const SparklineWithSlider = dynamic(() => import('@/components/SparklineWithSlider'), {
+const Slider = dynamic(() => import('@/components/Slider'), {
     loading: () => <p>loading...</p>,
     ssr: false,
 })
@@ -28,7 +28,8 @@ const Home = () => {
             <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4">
                 <div className="w-4/5 h-1/4 pt-2">
                     <TrafficTimeseries />
-                    <SparklineWithSlider />
+                    <RainTimeseries />
+                    <Slider />
                 </div>
                 <div className="w-4/5 h-3/4 pb-4">
                     <Map />

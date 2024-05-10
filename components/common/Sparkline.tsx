@@ -1,13 +1,6 @@
 'use client'
 import { AreaChart, Area, XAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
 
-interface DataPoint {
-    timestamp: string
-    percentage: number
-    precipMM: number
-    filename: string
-}
-
 interface SparklineProps {
     data: DataPoint[]
     selectedTimestamp: string
