@@ -19,7 +19,16 @@ const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName,
                 <ResponsiveContainer width="100%" height="100%" minHeight={50}>
                     <AreaChart data={data}>
                         <XAxis dataKey="timestamp" hide={true} />
-                        if(selectedData) {<ReferenceLine x={selectedData?.timestamp} stroke="blue" />}
+                        if(selectedData){' '}
+                        {
+                            <ReferenceLine
+                                x={selectedData?.timestamp}
+                                stroke="black"
+                                strokeDasharray="2 2"
+                                strokeWidth="1"
+                                isFront={true}
+                            />
+                        }
                         <Area type="monotone" dataKey={keyName} stroke="#8884d8" fill="#8884d8" />
                     </AreaChart>
                 </ResponsiveContainer>

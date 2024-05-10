@@ -25,8 +25,8 @@ import combinedData from '@/fixtures/combined_data.json'
 const Home = () => {
     return (
         <StoreProvider weather_and_traffic_data={combinedData}>
-            <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4 py-12">
-                <div className="w-4/5 h-1/5 pt-2">
+            <div className="w-screen h-screen flex flex-col justify-center items-center space-y-4 py-8">
+                <div className="w-4/5 h-1/5 landscape:h-2/5 flex flex-col justify-between">
                     <TrafficTimeseries />
                     <RainTimeseries />
                     <Slider />
