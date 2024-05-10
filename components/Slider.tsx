@@ -27,7 +27,7 @@ const SparklineWithSlider: React.FC = () => {
     return (
         <>
             <div className="flex flex-row-reverse pt-2">
-                <div className="w-9/12 sm:w-10/12 pr-2">
+                <div className="w-9/12 sm:w-10/12 lg:w-11/12 pr-4">
                     <Slider min={0} max={data.length - 1} step={1} onChange={handleSliderChange} />
                 </div>
             </div>
