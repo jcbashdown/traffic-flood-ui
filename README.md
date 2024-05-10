@@ -25,3 +25,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 # TODO
 
 -   24h average view
+-   Fix reference line for dark mode
+-   landscape view - less padding above top chart as text still getting cut off
+-   Better design - get tips
