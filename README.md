@@ -21,3 +21,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 # Notes
 
 -   Some minor roads will never show traffic to don't assume that they will be traffic free
+
+# TODO
+
+-   24h average view
