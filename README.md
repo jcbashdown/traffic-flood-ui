@@ -29,3 +29,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 -   landscape view - less padding above top chart as text still getting cut off
 -   Better design - get tips
 -   Deploy to portfolio with explanation and open repos
+-   TODO - fix landscape with menu bar

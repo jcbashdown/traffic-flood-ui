@@ -26,14 +26,14 @@ const SparklineWithSlider: React.FC = () => {
 
     return (
         <>
-            <div className="flex flex-row-reverse pt-2">
+            <div className="flex flex-row-reverse pt-2 px-2">
                 <div className="w-9/12 sm:w-10/12 lg:w-11/12 pr-4">
                     <Slider min={0} max={data.length - 1} step={1} onChange={handleSliderChange} />
                 </div>
             </div>
             <div className="flex flex-row portrait:pt-2">
                 <div className="w-full">
-                    <h2 className="text-center pb-4 font-bold">{getHumanReadableLocalTime(selectedTimestamp)}</h2>
+                    <h2 className="text-center p-2 font-bold text-l">{getHumanReadableLocalTime(selectedTimestamp)}</h2>
                 </div>
             </div>
         </>

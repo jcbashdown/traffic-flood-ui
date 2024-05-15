@@ -1,5 +1,6 @@
 'use client'
 import { AreaChart, Area, XAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
+import { useEffect, useState } from 'react'
 
 interface SparklineProps {
     data: DataPoint[]
@@ -9,26 +10,34 @@ interface SparklineProps {
 }
 
 const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName, label }) => {
+    const [screenHeight, setScreenHeight] = useState(window.innerHeight)
+
+    useEffect(() => {
+        const handleResize = () => setScreenHeight(window.innerHeight)
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     const selectedData = data.find((data: DataPoint) => data.timestamp === selectedTimestamp)
+    const minHeight = screenHeight * 0.08 // Example: 20% of the screen height
     return (
         <div className="flex flex-row items-center">
             <div className="px-4 text-center font-bold w-3/12 sm:w-2/12 lg:w-1/12">
                 <h2>{label}</h2>
             </div>
             <div className="w-9/12 sm:w-10/12 lg:w-11/12 pr-4">
-                <ResponsiveContainer width="100%" height="100%" minHeight={50}>
+                <ResponsiveContainer width="100%" height="100%" minHeight={minHeight}>
                     <AreaChart data={data}>
                         <XAxis dataKey="timestamp" hide={true} />
-                        if(selectedData){' '}
-                        {
+                        {selectedData && (
                             <ReferenceLine
-                                x={selectedData?.timestamp}
+                                x={selectedData.timestamp}
                                 stroke="black"
                                 strokeDasharray="2 2"
                                 strokeWidth="1"
                                 isFront={true}
                             />
-                        }
+                        )}
                         <Area type="monotone" dataKey={keyName} stroke="#8884d8" fill="#8884d8" />
                     </AreaChart>
                 </ResponsiveContainer>

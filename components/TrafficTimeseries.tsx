@@ -8,7 +8,11 @@ import { selectData, selectSelectedTimestamp } from '@/lib/redux/store'
 const TrafficTimeseries: React.FC = () => {
     const selectedTimestamp = useAppSelector(selectSelectedTimestamp)
     const data = useAppSelector(selectData)
-    return <Sparkline data={data} selectedTimestamp={selectedTimestamp} keyName={'percentage'} label={'Traffic'} />
+    return (
+        <div className="p-2">
+            <Sparkline data={data} selectedTimestamp={selectedTimestamp} keyName={'percentage'} label={'Traffic'} />
+        </div>
+    )
 }
 
 export default TrafficTimeseries
