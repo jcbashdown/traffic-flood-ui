@@ -26,7 +26,5 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 -   24h average view
 -   Fix reference line for dark mode
--   landscape view - less padding above top chart as text still getting cut off
--   Better design - get tips
 -   Deploy to portfolio with explanation and open repos
--   TODO - fix landscape with menu bar
+-   check landscape view with topbar on mobile
