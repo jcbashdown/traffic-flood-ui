@@ -1,20 +1,18 @@
 import dynamic from 'next/dynamic'
 const Map = dynamic(() => import('@/components/Map'), {
-    loading: () => <p>loading...</p>,
+    loading: () => <p className="text-center font-semibold justify-center">Loading...</p>,
     ssr: false,
 })
 const RainTimeseries = dynamic(() => import('@/components/RainTimeseries'), {
-    loading: () => <p>loading...</p>,
     ssr: false,
 })
 
 const TrafficTimeseries = dynamic(() => import('@/components/TrafficTimeseries'), {
-    loading: () => <p>loading...</p>,
+    loading: () => <p className="text-center font-semibold justify-center">Loading...</p>,
     ssr: false,
 })
 
 const Slider = dynamic(() => import('@/components/Slider'), {
-    loading: () => <p>loading...</p>,
     ssr: false,
 })
 
