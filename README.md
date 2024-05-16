@@ -26,7 +26,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 -   24h average view
 -   Fix reference line for dark mode
--   Reference line for school start
 -   Deploy to portfolio with explanation and open repos
 -   check landscape view with topbar on mobile
 -   copyright notice
