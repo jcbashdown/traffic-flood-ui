@@ -2,14 +2,23 @@
 import { AreaChart, Area, XAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
 import { useEffect, useState } from 'react'
 
+type ReferenceTimestamp = {
+    timestamp: string
+    label: string
+}
+
 interface SparklineProps {
     data: DataPoint[]
     selectedTimestamp: string
     keyName: string
     label: string
+    referenceTimestamps: ReferenceTimestamp[]
+}
+const CustomLabel = ({ value }) => {
+    return <text className="text-sm text-blue-600">{value}</text>
 }
 
-const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName, label }) => {
+const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName, label, referenceTimestamps = [] }) => {
     const [screenHeight, setScreenHeight] = useState(window.innerHeight)
 
     useEffect(() => {
@@ -38,6 +47,16 @@ const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName,
                                 isFront={true}
                             />
                         )}
+                        {referenceTimestamps.map((referenceTimestamp: ReferenceTimestamp, i: number) => (
+                            <ReferenceLine
+                                key={referenceTimestamp.timestamp + i}
+                                x={referenceTimestamp.timestamp}
+                                label={{ value: referenceTimestamp.label, position: 'insideTopLeft' }}
+                                stroke="grey"
+                                strokeWidth="1"
+                                isFront={true}
+                            />
+                        ))}
                         <Area type="monotone" dataKey={keyName} stroke="#8884d8" fill="#8884d8" />
                     </AreaChart>
                 </ResponsiveContainer>

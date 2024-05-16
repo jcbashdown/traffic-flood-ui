@@ -33,7 +33,10 @@ const SparklineWithSlider: React.FC = () => {
             </div>
             <div className="flex flex-row portrait:pt-2">
                 <div className="w-full">
-                    <h2 className="text-center p-2 font-bold text-l">{getHumanReadableLocalTime(selectedTimestamp)}</h2>
+                    <h2 className="text-center p-2 font-bold text-l">
+                        <span className="sm:inline block">{getHumanReadableLocalTime(selectedTimestamp)} </span>
+                        <span className="invisible sm:visible"> - Local Time</span>
+                    </h2>
                 </div>
             </div>
         </>
