@@ -12,12 +12,8 @@ interface SparklineProps {
     selectedTimestamp: string
     keyName: string
     label: string
-    referenceTimestamps: ReferenceTimestamp[]
+    referenceTimestamps?: ReferenceTimestamp[]
 }
-const CustomLabel = ({ value }) => {
-    return <text className="text-sm text-blue-600">{value}</text>
-}
-
 const Sparkline: React.FC<SparklineProps> = ({ data, selectedTimestamp, keyName, label, referenceTimestamps = [] }) => {
     const [screenHeight, setScreenHeight] = useState(window.innerHeight)
 
