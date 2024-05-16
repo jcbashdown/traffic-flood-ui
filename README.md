@@ -9,7 +9,7 @@ The motivation was to better understand some of the impacts of the heavy rains i
 
 # Approach to data gathering/processing
 
--   See [separate repo][https://github.com/jcbashdown/traffic-flood]
+-   See [separate repo](https://github.com/jcbashdown/traffic-flood)
 
 ## In this repo
 
@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 yarn build
 ```
 
-Currently these are copied from the `out` directory to a separate repo `https://github.com/jcbashdown/traffic-flood-static` and deployed with cloudflare pages to [https://traffic-flood-static.pages.dev/][https://traffic-flood-static.pages.dev/]
+Currently these are copied from the `out` directory to a separate repo `https://github.com/jcbashdown/traffic-flood-static` and deployed with cloudflare pages to [https://traffic-flood-static.pages.dev/](https://traffic-flood-static.pages.dev/)
 
 # Notes
 
