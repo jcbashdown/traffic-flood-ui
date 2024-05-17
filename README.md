@@ -35,7 +35,7 @@ Currently these are copied from the `out` directory to a separate repo `https://
 
 # Notes
 
--   Some minor roads will never show traffic to don't assume that they will be traffic free
+-   Some minor roads will never show traffic so don't assume that they will be traffic free
 
 # TODO
 
