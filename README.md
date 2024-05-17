@@ -41,7 +41,5 @@ Currently these are copied from the `out` directory to a separate repo `https://
 
 -   24h average view
 -   Fix reference line for dark mode
--   Deploy to portfolio with explanation and open repos
+-   Deploy to portfolio
 -   check landscape view with topbar on mobile
--   copyright notice
--   code license
